@@ -1,12 +1,12 @@
-package com.krakedev.services;
+package com.krakedev.proyectos.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.krakedev.entidades.Empleado;
-import com.krakedev.repositories.EmpleadoRepository;
+import com.krakedev.proyectos.entidades.Empleado;
+import com.krakedev.proyectos.repositories.EmpleadoRepository;
 
 @Service
 public class EmpleadoService {

@@ -1,4 +1,4 @@
-package com.krakedev.entidades;
+package com.krakedev.proyectos.entidades;
 
 import java.util.List;
 

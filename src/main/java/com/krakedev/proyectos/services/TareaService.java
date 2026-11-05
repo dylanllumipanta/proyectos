@@ -1,4 +1,4 @@
-package com.krakedev.services;
+package com.krakedev.proyectos.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.krakedev.entidades.Empleado;
-import com.krakedev.entidades.Proyecto;
-import com.krakedev.entidades.Tarea;
-import com.krakedev.repositories.EmpleadoRepository;
-import com.krakedev.repositories.ProyectoRepository;
-import com.krakedev.repositories.TareaRepository;
+import com.krakedev.proyectos.entidades.Empleado;
+import com.krakedev.proyectos.entidades.Proyecto;
+import com.krakedev.proyectos.entidades.Tarea;
+import com.krakedev.proyectos.repositories.EmpleadoRepository;
+import com.krakedev.proyectos.repositories.ProyectoRepository;
+import com.krakedev.proyectos.repositories.TareaRepository;
 
 @Service
 public class TareaService {

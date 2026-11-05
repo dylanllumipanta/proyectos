@@ -1,4 +1,4 @@
-package com.krakedev.controllers;
+package com.krakedev.proyectos.controllers;
 
 import java.util.List;
 
@@ -13,24 +13,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.krakedev.entidades.Proyecto;
-import com.krakedev.services.ProyectoService;
+import com.krakedev.proyectos.entidades.Empleado;
+import com.krakedev.proyectos.services.EmpleadoService;
 
 @RestController
-@RequestMapping("/api/proyectos")
-public class ProyectoController {
+@RequestMapping("/api/empleados")
+public class EmpleadoController {
 
-    private final ProyectoService service;
+    private final EmpleadoService service;
 
-    public ProyectoController(ProyectoService service) {
+    public EmpleadoController(EmpleadoService service) {
         this.service = service;
     }
 
     @PostMapping
-    public ResponseEntity<?> crear(@RequestBody Proyecto proyecto) {
+    public ResponseEntity<?> crear(@RequestBody Empleado empleado) {
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
-                .body(service.guardar(proyecto));
+                .body(service.guardar(empleado));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(e.getMessage());
@@ -40,8 +40,8 @@ public class ProyectoController {
     @GetMapping
     public ResponseEntity<?> listar() {
         try {
-            List<Proyecto> proyectos = service.listar();
-            return ResponseEntity.ok(proyectos);
+            List<Empleado> empleados = service.listar();
+            return ResponseEntity.ok(empleados);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(e.getMessage());
@@ -63,11 +63,11 @@ public class ProyectoController {
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizar(
             @PathVariable int id,
-            @RequestBody Proyecto proyecto) {
+            @RequestBody Empleado empleado) {
         try {
-            return ResponseEntity.ok(service.actualizar(id, proyecto));
+            return ResponseEntity.ok(service.actualizar(id, empleado));
         } catch (RuntimeException e) {
-            if ("Proyecto no encontrado".equals(e.getMessage())) {
+            if ("Empleado no encontrado".equals(e.getMessage())) {
                 return ResponseEntity.notFound().build();
             }
 
@@ -85,7 +85,7 @@ public class ProyectoController {
             service.eliminar(id);
             return ResponseEntity.noContent().build();
         } catch (RuntimeException e) {
-            if ("Proyecto no encontrado".equals(e.getMessage())) {
+            if ("Empleado no encontrado".equals(e.getMessage())) {
                 return ResponseEntity.notFound().build();
             }
 

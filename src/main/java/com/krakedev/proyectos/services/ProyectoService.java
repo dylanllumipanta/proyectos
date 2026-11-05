@@ -1,12 +1,12 @@
-package com.krakedev.services;
+package com.krakedev.proyectos.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.krakedev.entidades.Proyecto;
-import com.krakedev.repositories.ProyectoRepository;
+import com.krakedev.proyectos.entidades.Proyecto;
+import com.krakedev.proyectos.repositories.ProyectoRepository;
 
 @Service
 public class ProyectoService {
